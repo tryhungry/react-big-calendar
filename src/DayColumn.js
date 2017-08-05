@@ -132,12 +132,13 @@ class DaySlot extends React.Component {
       , culture
       , eventPropGetter
       , selected, eventTimeRangeFormat, eventComponent
-      , eventWrapperComponent: EventWrapper
+      , eventWrapperComponent
       , rtl: isRtl
       , step
       , startAccessor, endAccessor, titleAccessor } = this.props;
 
     let EventComponent = eventComponent
+    let EventWrapper = eventWrapperComponent
 
     let styledEvents = getStyledEvents({
       events, startAccessor, endAccessor, min, totalMin: this._totalMin, step
