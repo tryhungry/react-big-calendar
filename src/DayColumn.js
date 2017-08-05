@@ -184,7 +184,17 @@ class DaySlot extends React.Component {
                 : title
               }
             </div>
-            <div style={{ backgroundColor: 'red', position: 'absolute', width: 20, height: 20, top: -10, right: -10 }} />
+            <div style={{
+                backgroundColor: '#eee',
+                position: 'absolute',
+                width: 20,
+                height: 20,
+                top: -10,
+                right: -10,
+                borderColor: 'black',
+                borderWidth: 1
+              }}
+              onClick={(e) => { e.preventDefault(); alert('asdf') }}>X</div>
           </div>
         </EventWrapper>
       )
