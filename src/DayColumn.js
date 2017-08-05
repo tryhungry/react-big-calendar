@@ -191,8 +191,12 @@ class DaySlot extends React.Component {
                 height: 20,
                 top: -10,
                 right: -10,
+                cornerRadius: 10,
+                textAlign: 'center',
+                verticalAlign: 'center',
                 borderColor: 'black',
-                borderWidth: 1
+                borderWidth: 1,
+                borderStyle: 'solid'
               }}
               onClick={(e) => { e.preventDefault(); alert('asdf') }}>X</div>
           </div>
