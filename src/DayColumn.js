@@ -194,13 +194,13 @@ class DaySlot extends React.Component {
                 right: -10,
                 textAlign: 'center',
                 verticalAlign: 'center',
-                radiusRadius: 10,
+                borderRadius: 10,
                 borderColor: '#4d4d4d',
                 borderWidth: 1,
                 borderStyle: 'solid',
                 color: '#4d4d4d'
               }}
-              onClick={(e) => { e.preventDefault(); onDelete && onDelete(event) }}>X</div>
+              onClick={(e) => { e.preventDefault(); e.stopPropagation(); onDelete && onDelete(event) }}>X</div>
           </div>
         </EventWrapper>
       )
