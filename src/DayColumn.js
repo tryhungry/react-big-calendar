@@ -131,14 +131,12 @@ class DaySlot extends React.Component {
       , max
       , culture
       , eventPropGetter
-      , selected, eventTimeRangeFormat, eventComponent
-      , eventWrapperComponent
+      , selected, eventTimeRangeFormat
+      , eventComponent: Event
+      , eventWrapperComponent: EventWrapper
       , rtl: isRtl
       , step
       , startAccessor, endAccessor, titleAccessor } = this.props;
-
-    let EventComponent = eventComponent
-    let EventWrapper = eventWrapperComponent
 
     let styledEvents = getStyledEvents({
       events, startAccessor, endAccessor, min, totalMin: this._totalMin, step
@@ -180,12 +178,13 @@ class DaySlot extends React.Component {
           >
             { /* <div className='rbc-event-label'>{label}</div> */ }
             <div className='rbc-event-content'>
-              { EventComponent
-                ? <EventComponent event={event} title={title}/>
+              { Event
+                ? <Event event={event} title={title}/>
                 : title
               }
             </div>
           </div>
+          <div style={{ backgroundColor: 'red', position: 'absolute', width: 20, height: 20, top: -10, right: 10 }} />
         </EventWrapper>
       )
     })
