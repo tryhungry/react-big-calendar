@@ -127,6 +127,7 @@ class DaySlot extends React.Component {
   renderEvents = () => {
     let {
         events
+      , onDelete
       , min
       , max
       , culture
@@ -191,14 +192,15 @@ class DaySlot extends React.Component {
                 height: 20,
                 top: -10,
                 right: -10,
-                cornerRadius: 10,
                 textAlign: 'center',
                 verticalAlign: 'center',
-                borderColor: 'black',
+                radiusRadius: 10,
+                borderColor: '#4d4d4d',
                 borderWidth: 1,
-                borderStyle: 'solid'
+                borderStyle: 'solid',
+                color: '#4d4d4d'
               }}
-              onClick={(e) => { e.preventDefault(); alert('asdf') }}>X</div>
+              onClick={(e) => { e.preventDefault(); onDelete && onDelete(event) }}>X</div>
           </div>
         </EventWrapper>
       )

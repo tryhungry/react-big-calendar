@@ -198,7 +198,7 @@ export default class TimeGrid extends Component {
   }
 
   renderEvents(range, events, today){
-    let { min, max, endAccessor, startAccessor, components } = this.props;
+    let { min, max, endAccessor, startAccessor, onDelete, components } = this.props;
 
     return range.map((date, idx) => {
       let daysEvents = events.filter(
@@ -219,6 +219,7 @@ export default class TimeGrid extends Component {
           style={segStyle(1, this.slots)}
           key={idx}
           date={date}
+          onDelete={onDelete}
           events={daysEvents}
         />
       )
