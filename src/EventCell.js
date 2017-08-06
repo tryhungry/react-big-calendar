@@ -50,7 +50,7 @@ class EventCell extends React.Component {
     return (
       <EventWrapper event={event}>
         <div
-          style={{...props.style, ...style}}
+          style={{...props.style, ...style, backgroundColor: 'red'}}
           className={cn('rbc-event', className, xClassName, {
             'rbc-selected': selected,
             'rbc-event-allday': isAllDay || dates.diff(start, dates.ceil(end, 'day'), 'day') > 1,

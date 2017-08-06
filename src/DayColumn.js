@@ -169,7 +169,8 @@ class DaySlot extends React.Component {
               height: `${height}%`,
               [isRtl ? 'right' : 'left']: `${Math.max(0, xOffset)}%`,
               width: `${width}%`,
-              overflow: 'visible'
+              overflow: 'visible',
+              backgroundColor: 'red',
             }}
             title={label + ': ' + title }
             onClick={(e) => this._select(event, e)}
