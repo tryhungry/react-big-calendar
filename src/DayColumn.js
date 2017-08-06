@@ -132,6 +132,7 @@ class DaySlot extends React.Component {
       , max
       , culture
       , eventPropGetter
+      , selectable
       , selected, eventTimeRangeFormat
       , eventComponent: Event
       , eventWrapperComponent: EventWrapper
@@ -152,7 +153,7 @@ class DaySlot extends React.Component {
 
       let title = get(event, titleAccessor)
       let label = localizer.format({ start, end }, eventTimeRangeFormat, culture)
-      let _isSelected = isSelected(event, selected)
+      let _isSelected = isSelected(event, selected) && selectable === true
 
       if (eventPropGetter)
         var { style: xStyle, className } = eventPropGetter(event, start, end, _isSelected)
