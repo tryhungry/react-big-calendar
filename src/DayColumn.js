@@ -160,18 +160,22 @@ class DaySlot extends React.Component {
 
       let { height, top, width, xOffset } = style
 
+      const myStyle = {
+        ...xStyle,
+        top: `${top}%`,
+        height: `${height}%`,
+        [isRtl ? 'right' : 'left']: `${Math.max(0, xOffset)}%`,
+        width: `${width}%`,
+        overflow: 'visible'
+      }
+      if (event.recurring) {
+        myStyle.backgroundColor = '#27801d'
+      }
+
       return (
         <EventWrapper event={event} key={'evt_' + idx}>
           <div
-            style={{
-              ...xStyle,
-              top: `${top}%`,
-              height: `${height}%`,
-              [isRtl ? 'right' : 'left']: `${Math.max(0, xOffset)}%`,
-              width: `${width}%`,
-              overflow: 'visible',
-              backgroundColor: 'red',
-            }}
+            style={myStyle}
             title={label + ': ' + title }
             onClick={(e) => this._select(event, e)}
             className={cn('rbc-event', className, {

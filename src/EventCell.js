@@ -47,10 +47,15 @@ class EventCell extends React.Component {
     if (eventPropGetter)
       var { style, className: xClassName } = eventPropGetter(event, start, end, selected);
 
+    const myStyle = { ...props.style, ...style }
+    if (event.recurring) {
+      myStyle.backgroundColor = '#27801d'
+    }
+
     return (
       <EventWrapper event={event}>
         <div
-          style={{...props.style, ...style, backgroundColor: 'red'}}
+          style={myStyle}
           className={cn('rbc-event', className, xClassName, {
             'rbc-selected': selected,
             'rbc-event-allday': isAllDay || dates.diff(start, dates.ceil(end, 'day'), 'day') > 1,
