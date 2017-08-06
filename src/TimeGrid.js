@@ -250,6 +250,15 @@ export default class TimeGrid extends Component {
           />
           { this.renderHeaderCells(range) }
         </div>
+        <div className='rbc-row'>
+          <div
+            ref={ref => this._gutters[0] = ref}
+            className='rbc-label rbc-header-gutter'
+            style={{ width }}
+          >
+            { message(messages).allDay }
+          </div>
+        </div>
       </div>
     )
   }
